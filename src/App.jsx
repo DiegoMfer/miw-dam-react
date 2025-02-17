@@ -15,8 +15,6 @@ function App() {
       .then(contacts => setContacts(contacts.results));
   }, [])
 
- 
-
 
 
 
