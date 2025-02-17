@@ -45,6 +45,11 @@ function App() {
     setContacts([...za]); //clone the list
   }
 
+  const onRandom = () => {
+    let shuffledContacts = contacts.sort(() => Math.random() - 0.5);
+    setContacts([...shuffledContacts]); //clone the list
+  }
+
   return (
     <div className='tc'>
       <header>
@@ -52,7 +57,7 @@ function App() {
       </header>
 
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <Searcher searchChange={onSearchChange} az={onAZ} za={onZA} />
+        <Searcher searchChange={onSearchChange} az={onAZ} za={onZA} reset={onRandom}/>
         <Scroll>
           <CardList contacts={searchedContacts} />
         </Scroll>
